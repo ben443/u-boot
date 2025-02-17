@@ -18,4 +18,6 @@ jobs:
 
     - name: Build U-Boot
       run: |
-        make uImage
+        source ./board/qualcomm/hyp-sm8250.env
+        cp board/qualcomm/hyp-sm8250.config .config
+        sudo make
