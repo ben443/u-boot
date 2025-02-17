@@ -1,0 +1,21 @@
+name: Build U-Boot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Build Environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make python
+
+    - name: Build U-Boot
+      run: |
+        make
