@@ -14,9 +14,9 @@ jobs:
     - name: Set up Build Environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y gcc make python-is-python3
+        sudo apt-get install -y gcc make python <package-that-includes-scan>
 
-    - name: Build U-Boot
+    - name: Source environment and build
       run: |
         source ./board/qualcomm/hyp-sm8250.env
         cp board/qualcomm/hyp-sm8250.config .config
